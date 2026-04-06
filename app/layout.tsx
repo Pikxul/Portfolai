@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
-    <html lang="en" className={cn("scroll-smooth", inter.variable, jetbrainsMono.variable)}>
+    <html lang="en" suppressHydrationWarning className={cn("scroll-smooth", inter.variable, jetbrainsMono.variable)}>
       <body suppressHydrationWarning className="bg-slate-950 text-slate-200 antialiased selection:bg-blue-500/30 selection:text-blue-200 font-sans">
         <TooltipProvider>
           <AnimatedBackground />
