@@ -6,3 +6,5 @@ coverage/
 .env*
 !.env.example
 bash.exe.stackdump
+
+.vercel

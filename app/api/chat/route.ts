@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { GoogleGenAI } from '@google/genai';
 
+export const dynamic = 'force-dynamic';
+
 const resumeData = {
   name: "Mrityunjoy Mondal",
   role: "Software Engineer @ TCS",
@@ -21,7 +23,7 @@ export async function POST(req: NextRequest) {
 
     const apiKey = process.env.GEMINI_API_KEY;
     if (!apiKey) {
-      return NextResponse.json({ error: 'API key not configured.' }, { status: 500 });
+      return NextResponse.json({ error: 'API key not configured in deployment environment.' }, { status: 500 });
     }
 
     const ai = new GoogleGenAI({ apiKey });
