@@ -21,7 +21,7 @@ export async function POST(req: NextRequest) {
   try {
     const { message, history } = await req.json();
 
-    const apiKey = process.env.GEMINI_API_KEY;
+    const apiKey = process.env.GEMINI_API_KEY || process.env.api_key;
     if (!apiKey) {
       return NextResponse.json({ error: 'API key not configured in deployment environment.' }, { status: 500 });
     }
